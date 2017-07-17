@@ -38,7 +38,9 @@ done
 
 # Detect the installation directory
 INSTALLDIR=`dirname "$PRG"`
-
+echo $INSTALLDIR
+INSTALLDIR=/Users/arun/training/DatabaseDemo/libexec
+echo $INSTALLDIR
 if [ -x "$INSTALLDIR/jre/bin/java" ]; then
  JAVA_CMD=$INSTALLDIR/jre/bin/java
 else
