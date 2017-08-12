@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh './libexec/flyway clean'
+        sh './libexec/flyway -configFile=./libexec/conf/ci.conf clean'
       }
     }
   }
