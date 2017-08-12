@@ -3,7 +3,12 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        echo 'This is a minimal Build'
+        echo 'Starting the database deployment'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh './libexec/flyway clean'
       }
     }
   }
