@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh './libexec/flyway -configFile=ci.conf migrate'
+        sh './libexec/flyway -configFile=./libexec/conf/ci.conf migrate'
       }
     }
   }
