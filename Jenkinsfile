@@ -6,9 +6,14 @@ pipeline {
         echo 'Starting the database deployment'
       }
     }
-    stage('Deploy') {
+    stage('Clean') {
       steps {
         sh './libexec/flyway -configFile=./libexec/conf/ci.conf clean'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh './libexec/flyway -configFile=ci.conf migrate'
       }
     }
   }
